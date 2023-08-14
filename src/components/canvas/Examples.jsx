@@ -1,11 +1,14 @@
 'use client'
 
 import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
-import { useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState, useEffect } from 'react'
 import { Line, useCursor, MeshDistortMaterial } from '@react-three/drei'
 import { useRouter } from 'next/navigation'
+import { useSphere } from '@react-three/cannon'
+
+
 
 export const Blob = ({ route = '/', ...props }) => {
   const router = useRouter()
@@ -61,8 +64,68 @@ export function Duck(props) {
 
   return <primitive object={scene} {...props} />
 }
+
 export function Dog(props) {
   const { scene } = useGLTF('/dog.glb')
 
   return <primitive object={scene} {...props} />
+}
+
+export function RedOrb(props) {
+  const [orbs, setOrbs] = useState([]);
+  const [pointerDownTime, setPointerDownTime] = useState(null);
+
+  const handleClick = () => {
+    // Manually set the force direction to make the orb drift upwards and away
+    const direction = [0, 10, -5]; // Adjust these values as needed
+
+    // Add a new orb to the array every time you click
+    setOrbs(prevOrbs => [...prevOrbs, {
+      position: [0, 0, 0],
+      force: direction
+    }]);
+  };
+
+  const handlePointerDown = () => {
+    setPointerDownTime(Date.now());
+  };
+
+  const handlePointerUp = () => {
+    const duration = Date.now() - pointerDownTime;
+    if (duration < 200) {
+      handleClick();
+    }
+  };
+
+  return (
+    <>
+      {orbs.map((orb, index) => (
+        <OrbInstance key={index} position={orb.position} force={orb.force} />
+      ))}
+      <mesh onPointerDown={handlePointerDown} onPointerUp={handlePointerUp}>
+        {/* This mesh is invisible and only serves as a clickable area */}
+        <boxGeometry args={[10, 10, 10]} />
+        <meshBasicMaterial visible={false} />
+      </mesh>
+    </>
+  );
+}
+
+function OrbInstance({ position, force }) {
+  const [ref, api] = useSphere(() => ({
+    mass: 1,
+    position: position,
+  }));
+
+  useEffect(() => {
+    // Apply the stored force to the orb when it's created
+    api.applyForce(force);
+  }, [api, force]);
+
+  return (
+    <mesh ref={ref}>
+      <sphereGeometry args={[1, 32, 32]} />
+      <meshStandardMaterial color="red" />
+    </mesh>
+  );
 }

@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
         height: '100%',
         overflow: 'auto',
         touchAction: 'auto',
+        backgroundColor: 'black',
       }}
     >
       {children}
