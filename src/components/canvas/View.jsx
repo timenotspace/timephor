@@ -1,5 +1,6 @@
 'use client'
 
+import { Physics } from "@react-three/cannon"
 import { forwardRef, Suspense, useImperativeHandle, useRef } from 'react'
 import { OrbitControls, PerspectiveCamera, View as ViewImpl } from '@react-three/drei'
 import { Three } from '@/helpers/components/Three'
@@ -16,21 +17,23 @@ export const Common = ({ color = 'black' }) => (
 
 
 const View = forwardRef(({ children, orbit, ...props }, ref) => {
-  const localRef = useRef(null)
-  useImperativeHandle(ref, () => localRef.current)
+  const localRef = useRef(null);
+  useImperativeHandle(ref, () => localRef.current);
 
   return (
     <>
       <div ref={localRef} {...props} />
       <Three>
-        <ViewImpl track={localRef}>
-          {children}
-          {orbit && <OrbitControls />}
-        </ViewImpl>
+        <Physics>
+          <ViewImpl track={localRef}>
+            {children}
+            {orbit && <OrbitControls />}
+          </ViewImpl>
+        </Physics>
       </Three>
     </>
-  )
-})
-View.displayName = 'View'
+  );
+});
+View.displayName = "View";
 
-export { View }
+export { View };
