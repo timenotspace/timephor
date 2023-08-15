@@ -6,7 +6,7 @@ import { Three } from '@/helpers/components/Three';
 import { Physics, Debug } from "@react-three/cannon";
 
 
-export const Common = ({ color = 'black' }) => (
+export const Common = ({ color = 'transparent' }) => (
   <Suspense fallback={null}>
     {/* {color && <color attach='background' args={[color]} />} */}
     {/* commented out to toggle between background or transparent */}

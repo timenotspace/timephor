@@ -12,12 +12,15 @@ const Starfield = () => {
   const particlesRef = useRef();
 
   useEffect(() => {
+    // Set the background color of the scene to black
+    scene.background = new THREE.Color(0x000000);
+
     const particles = new THREE.BufferGeometry();
     const particleCount = 5000;
     const positions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 5000; // Increase the range
+      positions[i] = (Math.random() - 0.5) * 2222; // Increase the range
     }
 
     particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -44,6 +47,7 @@ const Starfield = () => {
 
   return null;
 };
+
 
 export default function Scene({ ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped

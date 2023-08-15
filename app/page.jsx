@@ -40,7 +40,7 @@ export default function Page() {
     <>
       <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5 bg-transparent'>
         {/* jumbo */}
-        <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
+        <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left bg-transparent'>
           <p className='w-full uppercase'> timenotspace x euphoric 3D experimental development </p>
           <h1 className='my-4 text-5xl font-bold leading-tight'>timephor ⚘</h1>
           <p className='mb-8 text-xs leading-normal'> 🌺EUPHORIC WRWC DIGITAL LAB TEST GARDEN FOR TAIGA-ZOKU & FRIENDS [pardon the construction] </p>
@@ -62,12 +62,12 @@ export default function Page() {
 
         {/* first row */}
 
-        <div className='relative h-48 w-full py-6 sm:w-1/2 md:my-12 md:mb-40'>
+        <div className='relative h-48 w-full py-6 sm:w-1/2 md:my-12 md:mb-40 bg-transparent'>
           <h2 className='mb-3 text-3xl font-bold leading-none text-cyan-300'>Building new types of interaction</h2>
           <p className='mb-8 text-cyan-300'>Explore the 3D scenes...</p>
         </div>
 
-        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
+        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40 bg-transparent'>
           <View orbit className='relative h-full  sm:h-48 sm:w-full' onClick={handleViewClick}>
             <Suspense fallback={null}>
               {showRedOrb && <RedOrb />}
