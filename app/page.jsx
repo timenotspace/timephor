@@ -38,15 +38,15 @@ export default function Page() {
 
   return (
     <>
-      <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5 bg-transparent'>
+      <div className='mx-auto flex w-full flex-col flex-wrap items-center bg-transparent md:flex-row  lg:w-4/5'>
         {/* jumbo */}
-        <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left bg-transparent'>
+        <div className='flex w-full flex-col items-start justify-center p-12 text-center bg-transparent md:w-2/5 md:text-left'>
           <p className='w-full uppercase'> timenotspace x euphoric 3D experimental development </p>
           <h1 className='my-4 text-5xl font-bold leading-tight'>timephor ⚘</h1>
-          <p className='mb-8 text-xs leading-normal'> 🌺EUPHORIC WRWC DIGITAL LAB TEST GARDEN FOR TAIGA-ZOKU & FRIENDS [pardon the construction] </p>
+          <p className="mb-8 text-xs leading-normal"> 🌺EUPHORIC WRWC DIGITAL LAB TEST GARDEN FOR TAIGA-ZOKU & FRIENDS [pardon the construction] </p>
         </div>
 
-        <div className='w-full text-center md:w-3/5 bg-transparent'>
+        <div className='w-full text-center  bg-transparent md:w-3/5'>
           <View className='flex h-96 w-full flex-col items-center justify-center' onClick={handleViewClick}>
             <Suspense fallback={null}>
               {showRedOrb && <RedOrb />}
@@ -58,16 +58,16 @@ export default function Page() {
       </div>
 
 
-      <div className='mx-auto flex w-full flex-col flex-wrap items-center p-12 md:flex-row  lg:w-4/5'>
+      <div className='mx-auto flex w-full flex-col flex-wrap items-center p-12 bg-transparent md:flex-row  lg:w-4/5'>
 
         {/* first row */}
 
-        <div className='relative h-48 w-full py-6 sm:w-1/2 md:my-12 md:mb-40 bg-transparent'>
+        <div className='relative h-48 w-full py-6 sm:w-1/2 bg-transparent md:my-12 md:mb-40'>
           <h2 className='mb-3 text-3xl font-bold leading-none text-cyan-300'>Building new types of interaction</h2>
           <p className='mb-8 text-cyan-300'>Explore the 3D scenes...</p>
         </div>
 
-        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40 bg-transparent'>
+        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 bg-transparent md:mb-40'>
           <View orbit className='relative h-full  sm:h-48 sm:w-full' onClick={handleViewClick}>
             <Suspense fallback={null}>
               {showRedOrb && <RedOrb />}
@@ -79,7 +79,7 @@ export default function Page() {
 
         {/* second row */}
 
-        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
+        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 bg-transparent md:mb-40'>
           {/* <View orbit className='relative h-full animate-bounce sm:h-48 sm:w-full' onClick={handleViewClick}> */}
           <View orbit className='relative h-full sm:h-48 sm:w-full' onClick={handleViewClick}>
 
@@ -91,7 +91,7 @@ export default function Page() {
           </View>
         </div>
 
-        <div className='w-full p-6 sm:w-1/2'>
+        <div className='w-full p-6 bg-transparent sm:w-1/2'>
           <h2 className='mb-3 text-3xl font-bold leading-none text-cyan-300'>Paradigms that don't exist elsewhere</h2>
           <p className='mb-8 text-cyan-300'>
             3D Divs are rendered through the View component.

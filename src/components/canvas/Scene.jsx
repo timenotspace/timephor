@@ -8,12 +8,13 @@ import { useEffect, useRef } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
 
 const Starfield = () => {
-  const { scene } = useThree();
+  const { scene, gl } = useThree();
   const particlesRef = useRef();
 
   useEffect(() => {
     // Set the background color of the scene to black
     scene.background = new THREE.Color(0x000000);
+    gl.setClearColor(new THREE.Color(0x000000));
 
     const particles = new THREE.BufferGeometry();
     const particleCount = 5000;
@@ -36,7 +37,7 @@ const Starfield = () => {
     return () => {
       scene.remove(particlesRef.current);
     };
-  }, [scene]);
+  }, [scene, gl]);
 
   useFrame(() => {
     if (particlesRef.current) {
