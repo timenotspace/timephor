@@ -8,8 +8,6 @@ import { Physics, Debug } from "@react-three/cannon";
 
 export const Common = ({ color = 'transparent' }) => (
   <Suspense fallback={null}>
-    {/* {color && <color attach='background' args={[color]} />} */}
-    {/* commented out to toggle between background or transparent */}
     {color}
 
     <ambientLight intensity={0.5} />
