@@ -24,7 +24,7 @@ const Starfield = () => {
 
     const material = new THREE.PointsMaterial({
       color: 'white',
-      size: 0.5,
+      size: 1,
     });
 
     particlesRef.current = new THREE.Points(particles, material);
