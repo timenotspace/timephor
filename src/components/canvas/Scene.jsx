@@ -14,7 +14,7 @@ const Starfield = () => {
   useEffect(() => {
     // Set the background color of the scene to black
     scene.background = new THREE.Color(0x000000);
-    gl.setClearColor(new THREE.Color(0x000000));
+    // gl.setClearColor(new THREE.Color(0x000000));
 
     const particles = new THREE.BufferGeometry();
     const particleCount = 5000;
@@ -53,7 +53,8 @@ const Starfield = () => {
 export default function Scene({ ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
   return (
-    <Canvas {...props}>
+    <Canvas gl={{ clearColor: 'transparent' }}{...props}>
+      <perspectiveCamera position={[0, 0, 500]} />
       <Starfield />
       <r3f.Out />
       <Preload all />
