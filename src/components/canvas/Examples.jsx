@@ -119,7 +119,7 @@ function OrbInstance({ position }) {
 
   useEffect(() => {
     // Apply a static force to the orb when it's created
-    api.applyForce([0, 100, -10]); // This force should make the orb move upwards and slightly away from the camera
+    api.applyForce([0, 50, 0], [0, 0, 0]);
   }, [api]);
 
   return (

@@ -1,7 +1,7 @@
 'use client';
 
 import { forwardRef, Suspense, useImperativeHandle, useRef } from 'react';
-import { OrbitControls, PerspectiveCamera, View as ViewImpl } from '@react-three/drei';
+import { OrbitControls, FlyControls, PerspectiveCamera, View as ViewImpl } from '@react-three/drei';
 import { Three } from '@/helpers/components/Three';
 import { Physics, Debug } from "@react-three/cannon";
 
@@ -28,7 +28,7 @@ const View = forwardRef(({ children, orbit, ...props }, ref) => {
           <Debug scale={10}> {/* Add this line to enable the debug renderer */}
             <ViewImpl track={localRef}>
               {children}
-              {orbit && <OrbitControls />}
+              {orbit && < OrbitControls zoomSpeed={1.5} minDistance={5} maxDistance={50} />} {/*Switch OrbitControls and FlyControls here */}
             </ViewImpl>
           </Debug> {/* Close the Debug component here */}
         </Physics>
