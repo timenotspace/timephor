@@ -77,7 +77,7 @@ export function RedOrb(props) {
 
   const handleClick = () => {
     // Manually set the force direction to make the orb drift upwards and away
-    const direction = [0, 10, -5]; // Adjust these values as needed
+    const direction = [0, 1, 0]; // Adjust these values as needed
 
     // Add a new orb to the array every time you click
     setOrbs(prevOrbs => [...prevOrbs, {
@@ -111,16 +111,16 @@ export function RedOrb(props) {
   );
 }
 
-function OrbInstance({ position, force }) {
+function OrbInstance({ position }) {
   const [ref, api] = useSphere(() => ({
     mass: 1,
     position: position,
   }));
 
   useEffect(() => {
-    // Apply the stored force to the orb when it's created
-    api.applyForce(force);
-  }, [api, force]);
+    // Apply a static force to the orb when it's created
+    api.applyForce([0, 100, -10]); // This force should make the orb move upwards and slightly away from the camera
+  }, [api]);
 
   return (
     <mesh ref={ref}>

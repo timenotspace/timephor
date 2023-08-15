@@ -1,9 +1,10 @@
-'use client'
+'use client';
 
-import { Physics } from "@react-three/cannon"
-import { forwardRef, Suspense, useImperativeHandle, useRef } from 'react'
-import { OrbitControls, PerspectiveCamera, View as ViewImpl } from '@react-three/drei'
-import { Three } from '@/helpers/components/Three'
+import { forwardRef, Suspense, useImperativeHandle, useRef } from 'react';
+import { OrbitControls, PerspectiveCamera, View as ViewImpl } from '@react-three/drei';
+import { Three } from '@/helpers/components/Three';
+import { Physics, Debug } from "@react-three/cannon";
+
 
 export const Common = ({ color = 'black' }) => (
   <Suspense fallback={null}>
@@ -15,7 +16,6 @@ export const Common = ({ color = 'black' }) => (
   </Suspense>
 );
 
-
 const View = forwardRef(({ children, orbit, ...props }, ref) => {
   const localRef = useRef(null);
   useImperativeHandle(ref, () => localRef.current);
@@ -24,16 +24,17 @@ const View = forwardRef(({ children, orbit, ...props }, ref) => {
     <>
       <div ref={localRef} {...props} />
       <Three>
-        <Physics>
-          <ViewImpl track={localRef}>
-            {children}
-            {orbit && <OrbitControls />}
-          </ViewImpl>
+        <Physics gravity={[0, 0, 0]}>
+          <Debug scale={10}> {/* Add this line to enable the debug renderer */}
+            <ViewImpl track={localRef}>
+              {children}
+              {orbit && <OrbitControls />}
+            </ViewImpl>
+          </Debug> {/* Close the Debug component here */}
         </Physics>
       </Three>
     </>
   );
 });
-View.displayName = "View";
 
 export { View };
