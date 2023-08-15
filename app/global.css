@@ -17,4 +17,8 @@
     overflow: hidden;
     color: white;
   }
+
+  canvas {
+    background-color: transparent !important;
+  }
 }

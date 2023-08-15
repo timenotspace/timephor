@@ -1,3 +1,4 @@
 import tunnel from 'tunnel-rat'
 
-export const r3f = tunnel()
+const r3fInstance = tunnel();
+export { r3fInstance as r3f };
