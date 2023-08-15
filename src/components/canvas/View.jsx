@@ -8,7 +8,10 @@ import { Physics, Debug } from "@react-three/cannon";
 
 export const Common = ({ color = 'black' }) => (
   <Suspense fallback={null}>
-    {color && <color attach='background' args={[color]} />}
+    {/* {color && <color attach='background' args={[color]} />} */}
+    {/* commented out to toggle between background or transparent */}
+    {color}
+
     <ambientLight intensity={0.5} />
     <pointLight position={[20, 30, 10]} intensity={1} />
     <pointLight position={[-10, -10, -10]} color='blue' />

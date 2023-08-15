@@ -38,9 +38,9 @@ export default function Page() {
       <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
         {/* jumbo */}
         <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
-          <p className='w-full uppercase'> Euphoric 3D experimental development </p>
+          <p className='w-full uppercase'> timenotspace x euphoric 3D experimental development </p>
           <h1 className='my-4 text-5xl font-bold leading-tight'>timephor ⚘</h1>
-          <p className='mb-8 text-l leading-normal'> [ A 🌺Euphoric WRWC test garden for Taiga-Zoku digital labwork ] </p>
+          <p className='mb-8 text-xs leading-normal'> 🌺EUPHORIC WRWC DIGITAL LAB TEST GARDEN FOR TAIGA-ZOKU & FRIENDS [pardon the construction] </p>
         </div>
 
         <div className='w-full text-center md:w-3/5'>
@@ -83,13 +83,13 @@ export default function Page() {
             <Suspense fallback={null}>
               {showRedOrb && <RedOrb />}
               <Duck route='/blob' scale={2} position={[0, -1.6, 0]} />
-              <Common color={'cyan'} />
+              <Common color={'black'} />
             </Suspense>
           </View>
         </div>
 
         <div className='w-full p-6 sm:w-1/2'>
-          <h2 className='mb-3 text-3xl font-bold leading-none text-cyan-300'>Dom and 3D are synchronized</h2>
+          <h2 className='mb-3 text-3xl font-bold leading-none text-cyan-300'>Paradigms that don't exist elsewhere</h2>
           <p className='mb-8 text-cyan-300'>
             3D Divs are rendered through the View component.
 
