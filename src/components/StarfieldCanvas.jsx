@@ -43,7 +43,7 @@ const Starfield = () => {
 
 export function StarfieldCanvas() {
     return (
-        <Canvas className="starfield-canvas" style={{ position: 'absolute', zIndex: -1 }}>
+        <Canvas className="starfield-canvas" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}>
             <Starfield />
         </Canvas>
     );
