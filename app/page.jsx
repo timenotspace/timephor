@@ -40,7 +40,7 @@ export default function Page() {
         <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
           <p className='w-full uppercase'> Euphoric 3D experimental development </p>
           <h1 className='my-4 text-5xl font-bold leading-tight'>timephor ⚘</h1>
-          <p className='mb-8 text-1xl leading-normal'> [ A 🌺Euphoric WRWC test garden for Taiga-Zoku digital labwork ] </p>
+          <p className='mb-8 text-l leading-normal'> [ A 🌺Euphoric WRWC test garden for Taiga-Zoku digital labwork ] </p>
         </div>
 
         <div className='w-full text-center md:w-3/5'>
