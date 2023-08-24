@@ -3,14 +3,13 @@
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import { RedOrb } from '@/components/controls/RedOrb';
-import { StarfieldCanvas } from '@/components/starfield/StarfieldCanvas'
 import { useState } from 'react';
 import Link from 'next/link';
 
-const Logo = dynamic(() => import('@/components/views/Examples').then((mod) => mod.Logo), { ssr: false })
-const Dog = dynamic(() => import('@/components/views/Examples').then((mod) => mod.Dog), { ssr: false })
-const Duck = dynamic(() => import('@/components/views/Examples').then((mod) => mod.Duck), { ssr: false })
-const View = dynamic(() => import('@/components/views/View').then((mod) => mod.View), {
+const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false })
+const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false })
+const Duck = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Duck), { ssr: false })
+const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
   ssr: false,
   loading: () => (
     <div className='flex h-96 w-full flex-col items-center justify-center'>
@@ -25,7 +24,7 @@ const View = dynamic(() => import('@/components/views/View').then((mod) => mod.V
     </div>
   ),
 })
-const Common = dynamic(() => import('@/components/views/View').then((mod) => mod.Common), { ssr: false })
+const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mod.Common), { ssr: false })
 
 export default function Page() {
   const [showRedOrb, setShowRedOrb] = useState(false);
@@ -35,17 +34,14 @@ export default function Page() {
 
   return (
     <>
-      <StarfieldCanvas />
-      <div className="mb-4">
-        <Link href="/starfield/TestStarfield">Go to Test Starfield</Link>
-      </div>
       <div className='mx-auto flex w-full flex-col flex-wrap items-center bg-transparent md:flex-row lg:w-4/5'>
         <div className='flex w-full flex-col items-start justify-center p-12 text-center bg-transparent md:w-2/5 md:text-left'>
-          <p className='w-full uppercase mb-4'>ｅｘｐｅｒｉｍｅｎｔａｌ ｄｅｖ</p>
+          <p className="mb-8 text-sm leading-normal">[ sᴘᴀᴄᴇ ᴄᴏɴsᴛʀᴜᴄᴛɪᴏɴ ] 🏗️</p>
+
+          <p className='w-full uppercase mb-4'>ｅｘｐ.ｄｅｖ</p>
           <h1 className='my-4 text-5xl font-bold leading-tight'>⚘EᴜᴘʜᴏʀɪᴄWRWC </h1>
           <p className="mb-8 text-xs leading-normal">5D TEST GARDEN 0.1</p>
-          <p className="mb-8 text-xs leading-normal">~ TAIGA-ZOKU & FRIENDS ~</p>
-          <p className="mb-8 text-sm leading-normal">[ ᴘᴀʀᴅᴏɴ sᴘᴀᴄᴇ ᴄᴏɴsᴛʀᴜᴄᴛɪᴏɴ ] 🏗️</p>
+          <p className="mb-8 text-xs leading-normal">TAIGA-ZOKU & FRIENDS 🌺</p>
         </div>
         <div className='w-full text-center bg-transparent md:w-3/5'>
           <View className='flex h-96 w-full flex-col items-center justify-center' onClick={handleViewClick}>
@@ -83,7 +79,7 @@ export default function Page() {
         <div className='w-full p-6 bg-transparent sm:w-1/2'>
           <h2 className='mb-3 text-3xl font-bold leading-none text-cyan-300'>combining pieces in new ways</h2>
           <p className='mb-8 text-cyan-300'>
-            immersive 3D spaces , music , digital objects , simulated physics , new types of shared experiences by WRWC development in collaboration with 🌺Euphoric
+            new types of shared experiences by WRWC development in collaboration with 🌺Euphoric
           </p>
         </div>
       </div>

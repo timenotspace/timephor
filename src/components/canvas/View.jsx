@@ -22,9 +22,10 @@ const View = forwardRef(({ children, orbit, ...props }, ref) => {
 
   return (
     <>
+      {/* specifying the simulated gravity of the react-three/cannon physics, x y z */}
       <div ref={localRef} {...props} />
       <Three>
-        <Physics gravity={[0, 0, 0]}>
+        <Physics gravity={[0, -5, 0]}>
           <ViewImpl track={localRef}>
             {children}
             {orbit && < OrbitControls zoomSpeed={1.5} minDistance={3} maxDistance={50} />} {/*Switch OrbitControls and FlyControls here */}

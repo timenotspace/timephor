@@ -8,7 +8,7 @@ export function RedOrb(props) {
 
     const handleClick = () => {
         // Manually set the force direction to make the orb drift upwards and away
-        const direction = [0, 1, 0]; // Adjust these values as needed
+        const direction = [0, 2, 0]; // Adjust these values as needed
 
         // Add a new orb to the array every time you click
         setOrbs(prevOrbs => [...prevOrbs, {
@@ -50,7 +50,7 @@ function OrbInstance({ position }) {
 
     useEffect(() => {
         // Apply a static force to the orb when it's created
-        api.applyForce([0, 50, 0], [0, 0, 0]);
+        api.applyForce([0, 100, 0], [0, 0, 0]);
     }, [api]);
 
     return (

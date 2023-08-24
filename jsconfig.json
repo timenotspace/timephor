@@ -2,7 +2,30 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["app/*", "src/*"]
+      "@/app/*": [
+        "app/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/controls/*": [
+        "src/components/controls/*"
+      ],
+      "@/dom/*": [
+        "src/components/dom/*"
+      ],
+      "@/canvas/*": [
+        "src/components/canvas/*"
+      ],
+      "@/helpers/*": [
+        "src/helpers/*"
+      ],
+      "@/templates/*": [
+        "src/templates/*"
+      ]
     }
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
