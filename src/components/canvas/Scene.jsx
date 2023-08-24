@@ -9,6 +9,7 @@ import { useThree, useFrame } from '@react-three/fiber';
 
 
 
+
 export default function Scene({ ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
   return (

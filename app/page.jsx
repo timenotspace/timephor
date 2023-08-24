@@ -5,6 +5,9 @@ import { Suspense } from 'react'
 import { RedOrb } from '@/components/controls/RedOrb';
 import { useState } from 'react';
 import Link from 'next/link';
+import Starfield from '@/components/canvas/Starfield';
+import Joystick from '@/components/controls/Joystick';
+
 
 const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false })
 const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false })
@@ -32,6 +35,13 @@ export default function Page() {
     setShowRedOrb(true);
   };
 
+  // Define the handleJoystickMove function
+  const handleJoystickMove = (data) => {
+    // Handle the joystick data here
+    // For example, you can use the data to move the camera or an object in the scene
+    console.log(data); // For now, just log the data to see it
+  };
+
   return (
     <>
       <div className='mx-auto flex w-full flex-col flex-wrap items-center bg-transparent md:flex-row lg:w-4/5'>
@@ -46,7 +56,7 @@ export default function Page() {
         <div className='w-full text-center bg-transparent md:w-3/5'>
           <View className='flex h-96 w-full flex-col items-center justify-center' onClick={handleViewClick}>
             <Suspense fallback={null}>
-              {showRedOrb && <RedOrb />}
+              <Starfield />
               <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
               <Common />
             </Suspense>
@@ -66,6 +76,8 @@ export default function Page() {
               <Common color={'transparent'} />
             </Suspense>
           </View>
+          <Joystick onMove={handleJoystickMove} />
+
         </div>
         <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 bg-transparent md:mb-40'>
           <View orbit className='relative h-full sm:h-48 sm:w-full' onClick={handleViewClick}>

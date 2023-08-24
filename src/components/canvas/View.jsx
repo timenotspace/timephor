@@ -4,6 +4,9 @@ import { forwardRef, Suspense, useImperativeHandle, useRef } from 'react';
 import { OrbitControls, FlyControls, PerspectiveCamera, View as ViewImpl } from '@react-three/drei';
 import { Three } from '@/helpers/components/Three';
 import { Physics, Debug } from "@react-three/cannon";
+import Joystick from '../controls/Joystick';
+
+
 
 export const Common = ({ color = 'transparent' }) => (
   <Suspense fallback={null}>
@@ -22,6 +25,7 @@ const View = forwardRef(({ children, orbit, ...props }, ref) => {
 
   return (
     <>
+
       {/* specifying the simulated gravity of the react-three/cannon physics, x y z */}
       <div ref={localRef} {...props} />
       <Three>
