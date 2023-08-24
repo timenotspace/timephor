@@ -37,7 +37,7 @@ export default function Page() {
     <>
       <StarfieldCanvas />
       <div className="mb-4">
-        <Link href="/TestStarfield">Go to Test Starfield</Link>
+        <Link href="/starfield/TestStarfield">Go to Test Starfield</Link>
       </div>
       <div className='mx-auto flex w-full flex-col flex-wrap items-center bg-transparent md:flex-row lg:w-4/5'>
         <div className='flex w-full flex-col items-start justify-center p-12 text-center bg-transparent md:w-2/5 md:text-left'>
