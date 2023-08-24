@@ -2,15 +2,15 @@
 
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
-import { RedOrb } from '@/components/canvas/Examples';
-import { StarfieldCanvas } from '@/components/StarfieldCanvas'
+import { RedOrb } from '@/components/controls/RedOrb';
+import { StarfieldCanvas } from '@/components/starfield/StarfieldCanvas'
 import { useState } from 'react';
 import Link from 'next/link';
 
-const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false })
-const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false })
-const Duck = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Duck), { ssr: false })
-const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
+const Logo = dynamic(() => import('@/components/views/Examples').then((mod) => mod.Logo), { ssr: false })
+const Dog = dynamic(() => import('@/components/views/Examples').then((mod) => mod.Dog), { ssr: false })
+const Duck = dynamic(() => import('@/components/views/Examples').then((mod) => mod.Duck), { ssr: false })
+const View = dynamic(() => import('@/components/views/View').then((mod) => mod.View), {
   ssr: false,
   loading: () => (
     <div className='flex h-96 w-full flex-col items-center justify-center'>
@@ -25,7 +25,7 @@ const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.
     </div>
   ),
 })
-const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mod.Common), { ssr: false })
+const Common = dynamic(() => import('@/components/views/View').then((mod) => mod.Common), { ssr: false })
 
 export default function Page() {
   const [showRedOrb, setShowRedOrb] = useState(false);

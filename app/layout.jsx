@@ -2,8 +2,8 @@ import { Layout } from '@/components/dom/Layout'
 import '@/global.css'
 
 export const metadata = {
-  title: 'timephor ⚘',
-  description: 'a minimal experiment in growth',
+  title: '⚘',
+  description: 'an experiment in growth',
 }
 
 export default function RootLayout({ children }) {

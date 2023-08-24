@@ -27,7 +27,7 @@ const View = forwardRef(({ children, orbit, ...props }, ref) => {
         <Physics gravity={[0, 0, 0]}>
           <ViewImpl track={localRef}>
             {children}
-            {orbit && < OrbitControls zoomSpeed={1.5} minDistance={5} maxDistance={50} />} {/*Switch OrbitControls and FlyControls here */}
+            {orbit && < OrbitControls zoomSpeed={1.5} minDistance={3} maxDistance={50} />} {/*Switch OrbitControls and FlyControls here */}
           </ViewImpl>
         </Physics>
       </Three>
