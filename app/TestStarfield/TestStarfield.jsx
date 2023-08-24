@@ -1,4 +1,4 @@
-// testStarfield.jsx
+// TestStarfield.jsx
 
 'use client'
 
@@ -8,6 +8,6 @@ import { RedOrb } from '@/components/canvas/Examples';
 import { StarfieldCanvas } from '@/components/StarfieldCanvas'
 import { useState } from 'react';
 
-export default function testStarfield() {
+export default function TestStarfield() {
     return <StarfieldCanvas />;
 }

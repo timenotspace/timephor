@@ -5,6 +5,8 @@ import { Suspense } from 'react'
 import { RedOrb } from '@/components/canvas/Examples';
 import { StarfieldCanvas } from '@/components/StarfieldCanvas'
 import { useState } from 'react';
+import Link from 'next/link';
+
 
 
 const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false })
@@ -43,13 +45,17 @@ export default function Page() {
     <>
       <StarfieldCanvas />
 
+      <div className="navigation">
+        <Link href="/TestStarfield">Go to Test Starfield</Link>
+      </div>
+
       <div className='mx-auto flex w-full flex-col flex-wrap items-center bg-transparent md:flex-row  lg:w-4/5'>
         {/* jumbo */}
         <div className='flex w-full flex-col items-start justify-center p-12 text-center bg-transparent md:w-2/5 md:text-left'>
           <p className='w-full uppercase'> 🌺euphoric experimental 3D development </p>
           <h1 className='my-4 text-5xl font-bold leading-tight'>timephor ⚘</h1>
           <p className="mb-8 text-xs leading-normal"> TEST GARDEN 4 TAIGA-ZOKU & FRIENDS </p>
-          <p className="mb-8 text-s leading-normal"> [pardon the timenotspace] 🏗️ </p>
+          <p className="mb-8 text-sm leading-normal"> [pardon the timenotspace] &apos;🏗️&apos; </p>
 
         </div>
         <div className='w-full text-center  bg-transparent md:w-3/5'>
